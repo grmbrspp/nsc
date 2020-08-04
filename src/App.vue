@@ -21,8 +21,8 @@
 
 		<div class="row">
 			<app-box
-				v-for="sys in inputSystems"
-				v-if="checkInput(sys.id)"
+				v-for="sys in validInputSystems"
+				:key="sys.id"
 				:num="output(sys.base)"
 				:type="sys.type">
 				{{ sys.txt }}
@@ -52,11 +52,14 @@
 		computed: {
 			input() {
 				return this.rawinput.replace(/[^0-9a-fA-F]/g, "");
+			},
+			validInputSystems() {
+				return this.inputSystems.filter(this.checkInput);
 			}
 		},
 		methods: {
-			checkInput(id) {
-				switch(id){
+			checkInput(sys) {
+				switch(sys.id){
 					case 2:
 						return this.input.match("^([0-1]{1,53})$");
 					case 8:
