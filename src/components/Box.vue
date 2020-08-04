@@ -4,59 +4,59 @@
 			<div v-if="type==0" class="panel-body">
 				
 				<table>
-		            <tr><th colspan="2">If your input is base<slot></slot>:</th></tr>
-		            <tr>
-		            	<td>Bin:</td>
-		            	<td class="right">
-		            		{{ num.toString(2) | spaces(4) }}
-		            	</td>
-		            </tr>
-		            <tr>
-		            	<td>Oct:</td>
-		            	<td class="right">
-		            		{{ num.toString(8) | spaces(4) }}
-		            	</td>
-		            </tr>
-		            <tr>
-		            	<td>Dec:</td>
-		            	<td class="right">
-		            		{{ num.toString() | spaces(3) }}
-		            	</td>
-		            </tr>
-		            <tr>
-		            	<td>Hex:</td>
-		            	<td class="right">
-		            		{{ num.toString(16) | spaces(4) }}
-		            	</td>
-		            </tr>
-		            <span class="background">
-		            	<slot></slot>
-		            </span>
-		        </table>
-	        </div>
-	        <div v-if="type==1" class="panel-body">
-	        	<b>If your input is <slot></slot>:</b>
-	        	<div 
-	        		class="colorbox"
-	        		:style="'background-color: #' + num.toString(16)">
-	        		&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
-	        	</div>
-	        </div>
-	        <div v-if="type==2" class="panel-body">
-	        	<table>
-		        	<tr><th colspan="2">If your input is <slot></slot>:</th></tr>
-		        	<tr>
-		        		<td>EU format:</td>
-		        		<td class="right">{{ getTime(num)[0] }} UTC</td>
-		        	</tr>
-		        	<tr>
-		        		<td>US format:</td>
-		        		<td class="right">{{ getTime(num)[1] }} UTC</td>
-		        	</tr>
-		        </table>
-	        </div>
-	    </div>
-    </div>	
+					<tr><th colspan="2">If your input is base<slot></slot>:</th></tr>
+					<tr>
+						<td>Bin:</td>
+						<td class="right">
+							{{ num.toString(2) | spaces(4) }}
+						</td>
+					</tr>
+					<tr>
+						<td>Oct:</td>
+						<td class="right">
+							{{ num.toString(8) | spaces(4) }}
+						</td>
+					</tr>
+					<tr>
+						<td>Dec:</td>
+						<td class="right">
+							{{ num.toString() | spaces(3) }}
+						</td>
+					</tr>
+					<tr>
+						<td>Hex:</td>
+						<td class="right">
+							{{ num.toString(16) | spaces(4) }}
+						</td>
+					</tr>
+					<span class="background">
+						<slot></slot>
+					</span>
+				</table>
+			</div>
+			<div v-if="type==1" class="panel-body">
+				<b>If your input is <slot></slot>:</b>
+				<div 
+					class="colorbox"
+					:style="'background-color: #' + num.toString(16)">
+					&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
+				</div>
+			</div>
+			<div v-if="type==2" class="panel-body">
+				<table>
+					<tr><th colspan="2">If your input is <slot></slot>:</th></tr>
+					<tr>
+						<td>EU format:</td>
+						<td class="right">{{ getTime(num)[0] }} UTC</td>
+					</tr>
+					<tr>
+						<td>US format:</td>
+						<td class="right">{{ getTime(num)[1] }} UTC</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>	
 </template>
 
 <script>
@@ -109,14 +109,14 @@
 	.background {
 		position: absolute; 
 		bottom: 0px;
-	   	right: 20px; 
-	   	width: 100%;
-	   	text-align: right;
-	   	font-size: 72pt;
-	   	font-weight: bold;
-	   	color: #ccc;
-	   	text-shadow: 2px 2px 2px #189;
-	   	opacity: .2;
-	   	user-select: none;
+		right: 20px; 
+		width: 100%;
+		text-align: right;
+		font-size: 72pt;
+		font-weight: bold;
+		color: #ccc;
+		text-shadow: 2px 2px 2px #189;
+		opacity: .2;
+		user-select: none;
 	}
 </style>
