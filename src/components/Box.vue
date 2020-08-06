@@ -38,7 +38,7 @@
 				<b>If your input is <slot></slot>:</b>
 				<div 
 					class="colorbox"
-					:style="'background-color: #' + num.toString(16)">
+					:style="'background-color: ' + getColorCode(num, len)">
 					&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
 				</div>
 			</div>
@@ -61,7 +61,7 @@
 
 <script>
 	export default {
-		props: ["num", "type"],
+		props: ["num", "type", "len"],
 		methods: {
 			getTime(unixTS) {
 				let date = new Date(unixTS*1000);
@@ -75,6 +75,13 @@
 				let usTime = month + "-" + day + "-" + year + " " + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 				let euTime = day + "." + month + "." + year + " " + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 				return [euTime, usTime];
+			},
+			getColorCode: function(int, inputLength) {
+				let str = int.toString(16);
+				while (str.length < inputLength) {
+					str = "0" + str;
+				}
+				return "#" + str;
 			}
 		}, 
 		filters: {

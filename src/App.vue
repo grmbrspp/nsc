@@ -24,7 +24,8 @@
 				v-for="sys in validInputSystems"
 				:key="sys.id"
 				:num="output(sys.base)"
-				:type="sys.type">
+				:type="sys.type"
+				:len="input.length">
 				{{ sys.txt }}
 			</app-box>
 		</div>
