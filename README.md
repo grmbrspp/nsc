@@ -1,6 +1,6 @@
 ### Number System Converter
 
-A web app I wrote while learning vue.js, go ahead and take a look [here](https://fx-tm.de/nsc/).
+A web app I wrote while learning vue.js, go ahead and take a look [here](https://nsc.fx-tm.de/).
 
 ### Installation
 
